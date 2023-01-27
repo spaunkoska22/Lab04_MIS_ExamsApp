@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
         ),
-        initialRoute: LogInScreen.idScreen,
+        initialRoute: MainScreen.idScreen,
         routes: {
           MainScreen.idScreen: (context) => MainScreen(),
           LogInScreen.idScreen: (context) => LogInScreen(),
@@ -35,3 +35,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//191010

@@ -7,6 +7,7 @@ import '../widgets/createNewElement.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import '../services/notifications_service.dart';
+import '../services/simple_map.dart';
 
 class MainScreen extends StatefulWidget {
   static const String idScreen = "mainScreen";
@@ -148,6 +149,18 @@ class _MainScreenState extends State<MainScreen> {
               },
               tooltip: 'Calendar',
               child: const Icon(Icons.calendar_month),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SimpleMap(),
+                  ),
+                );
+              },
+              tooltip: 'Map',
+              child: const Icon(Icons.map),
             ),
             ElevatedButton(
               onPressed: () async{
