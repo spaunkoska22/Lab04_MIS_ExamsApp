@@ -29,17 +29,17 @@ class _MainScreenState extends State<MainScreen> {
     ListItem(
       id: "1",
       ime: "Мобилни информациски системи",
-      datum: DateTime.parse("2023-01-21 15:00:00"),
+      datum: DateTime.parse("2023-03-03 15:00:00"),
     ),
     ListItem(
       id: "2",
       ime: "Програмирање видео игри",
-      datum: DateTime.parse("2023-01-24 11:00:00"),
+      datum: DateTime.parse("2023-02-24 11:00:00"),
     ),
     ListItem(
       id: "3",
       ime: "Анализа и дизајн на ИС",
-      datum: DateTime.parse("2023-01-26 08:00:00"),
+      datum: DateTime.parse("2023-02-10 08:00:00"),
     )
   ];
 
@@ -138,30 +138,6 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
             ),
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CalendarScreen(_ispiti),
-                  ),
-                );
-              },
-              tooltip: 'Calendar',
-              child: const Icon(Icons.calendar_month),
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SimpleMap(),
-                  ),
-                );
-              },
-              tooltip: 'Map',
-              child: const Icon(Icons.map),
-            ),
             ElevatedButton(
               onPressed: () async{
                 await service.showNotification(id: 0, title: 'Колоквиум/испит', body: 'Провери го твојот календар за полагање испити!');
@@ -174,6 +150,39 @@ class _MainScreenState extends State<MainScreen> {
               },
               child: Text("Намести нотификација", style: TextStyle(fontSize: 20)),
             ),
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 220.0),
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CalendarScreen(_ispiti),
+                      ),
+                    );
+                  },
+                  tooltip: 'Calendar',
+                  backgroundColor: Colors.deepOrangeAccent,
+                  child: const Icon(Icons.calendar_month),
+                ),
+              SizedBox(width: 10,
+              ),
+              FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SimpleMap(),
+                      ),
+                    );
+                  },
+                  tooltip: 'Map',
+                  backgroundColor: Colors.deepPurpleAccent,
+                  child: const Icon(Icons.maps_home_work),
+              ),
+            ],)
           ],
         ),
       ),
